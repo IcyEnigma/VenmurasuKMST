@@ -53,9 +53,11 @@ There were numerous instances where a single line in Tamil extrapolates to multi
 The English texts are all reasonably comfortable to work with when split by the new-line character.
 
 All English files except the 26th file begin with two lines: 
+
 SECTION x 
 (Astika Parva continued)
 where x is the roman numeral for the file number.
+
 These two lines are just lines that help the reader navigate the book at ease. However, these lines do not feature in the Tamil texts. Hence, these lines have to be removed while cleaning. To do so, we exploited the fact that lines are separated by new-line characters. Upon splitting the text by new-line character, we can remove the first two redundant lines.
  
 All English files end with the following line except the 25th file:
@@ -176,7 +178,11 @@ t.close()
 ## Step 7: Analysis of Texts through Plots ##
 In order to better understand the difference in text lengths between the corresponding files, we used the Matplotlib library.
 
-       Plot 1: Comparison of Text Length between English and Tamil Files after Cleaning.
+Plot 1: Comparison of Text Length between English and Tamil Files after Cleaning
 !["Plot 1"](https://user-images.githubusercontent.com/89002098/130358123-0ce01785-1eb2-4d20-aa09-141af5fca455.jpeg)
+
+Plot 2: Comparison of Text Length between English and Tamil Files after Manual Alignment
+!["Plot 2"](https://user-images.githubusercontent.com/89002098/130358123-0ce01785-1eb2-4d20-aa09-141af5fca455.jpeg)
+
 ## Step 8: Manual Text Alignment ##
 The files cleaned using the functions given above were manually aligned to match many-to-one and one-to-many text maps. Text alignment in the file was also taken care of. Lines were combined when the split did not seem meaningful. When lines were too large, they were split to make input line size smaller. There is definitely scope to perform alignment this using code, however, the manual route was chosen in order to create scope for our discretion in cleaning.
