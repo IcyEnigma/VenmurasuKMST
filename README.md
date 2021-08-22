@@ -54,9 +54,9 @@ The English texts are all reasonably comfortable to work with when split by the 
 
 All English files except the 26th file begin with two lines: 
 
-SECTION x 
-(Astika Parva continued)
-where x is the roman numeral for the file number.
+SECTION x <br />
+(Astika Parva continued) <br />
+where x is the roman numeral for the file number. <br />
 
 These two lines are just lines that help the reader navigate the book at ease. However, these lines do not feature in the Tamil texts. Hence, these lines have to be removed while cleaning. To do so, we exploited the fact that lines are separated by new-line characters. Upon splitting the text by new-line character, we can remove the first two redundant lines.
  
