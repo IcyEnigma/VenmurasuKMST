@@ -186,3 +186,21 @@ Plot 2: Comparison of Text Length between English and Tamil Files after Manual A
 
 ## Step 8: Manual Text Alignment ##
 The files cleaned using the functions given above were manually aligned to match many-to-one and one-to-many text maps. Text alignment in the file was also taken care of. Lines were combined when the split did not seem meaningful. When lines were too large, they were split to make input line size smaller. There is definitely scope to perform alignment this using code, however, the manual route was chosen in order to create scope for our discretion in cleaning.
+
+# BLEU Scores
+| File Number   | AI4Bharat Score | Google API Score  |
+| :-----------: |:---------------:| :----------------:|
+|   22   | 12.5520949323 | 4.3291404094 |
+|   23   |  9.2366716239 | 5.5086336647 |
+|   24   |  8.7663537944 | 5.5488030438 |
+|   25   | 8.0910895196  | 6.3795514817 |
+|   26   | 6.0639248459  | 6.2636153077 |
+|   27   | 8.3077738101  | 5.4586633117 |
+|   28   | 8.9566962699  | 6.023255213 |
+|   29   | 10.1245218033 | 9.5862504336 |
+|   30   | 10.6218278182 | 5.9720760755 |
+|   31   | 6.8141839322  | 4.5305431969 |
+
+### Average Scores ###
+AI4Bharat : 8.953513834979999 <br />
+Google API: 5.9600532138 <br />
