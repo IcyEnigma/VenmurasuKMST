@@ -1,7 +1,7 @@
 # Introduction #
 The Venmurasu Programming contest aims at creating a dataset of Tamil lines mapped to their English translations. The data provided in the contest was very raw and contained a lot of useful embedded cues which helped us map the Tamil and English texts. Although it was advised to drop one-to-many and many-to-one maps of the data, we deemed it essential to retain as much data as possible, and hence performed manual sentence alignment on the data and finally we used Streamlit Library to combine all our results into a Web Application.
 
-### Link for Web Application : ["Streamlit App"](https://streamlitvpfinal.herokuapp.com/)
+### Link for Web Application : (https://streamlitvpfinal.herokuapp.com/)
 
 Our strategy is elucidated in upcoming sections.
 
@@ -208,4 +208,4 @@ Google API: 5.9600532138 <br />
 
 # Deployment
 Using Streamlit, we built a web application to view our results. The application is hosted using Heroku.
-### Link for Web Application : ["Streamlit App"](https://streamlitvpfinal.herokuapp.com/)
+### Link for Web Application : (https://streamlitvpfinal.herokuapp.com/)
