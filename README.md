@@ -18,12 +18,12 @@ The platform we used to code our process was Google colab. The following chronol
 ## Step 1-3: Data Loading ##
 To clone the GitHub repository, a simple line of code is sufficient:
 
-```
+```python
 !git clone https://github.com/venmurasu-programming-team/Aug2021-contest.git
 ```
 
 The function we used for loading the data into our document is load_file:
-```
+```python
 def load_file(file_path):
  file = open(file_path,encoding = "utf8",mode = "rt")
  text = file.read()
@@ -31,7 +31,7 @@ def load_file(file_path):
  return text
 ```
 Using the above function, we copied the path of the files from the colab file directory and paste it in the function. The function will then return the raw content of the selected section of the text. For example, to load the thirtieth files, we did:
-```
+```python
 eng30 = load_file("/content/Aug2021-contest/resources/Mahabharatha-Adiparva-Section30-en.txt")
 tam30 = load_file("/content/Aug2021-contest/resources/Mahabharatha-Adiparva-Section30-ta.txt")
 ```
@@ -43,7 +43,7 @@ The next step is to analyse the data. Upon perusing the given files, we found so
 ### Features Common to Tamil files ###
 Tamil files have certain phrases within curly braces which serve as supplementary information for the reader. While this is essential, we cannot have them in the dataset as the English translations of these bits are not included in the English files.
 
-Tamil files have some segregation faults. For example, the 28th file begins with the words “வினதையிடம் விடைபெற்று சென்ற கருடன்”. These might be words from the conclusion of the previous section, which was omitted for some reason from the data before sharing it with the contestants. Such minor phrases have been removed manually.
+Tamil files have some segregation faults. For example, the 28th file begins with the words “_வினதையிடம் விடைபெற்று சென்ற கருடன்_”. These might be words from the conclusion of the previous section, which was omitted for some reason from the data before sharing it with the contestants. Such minor phrases have been removed manually.
 
 The Tamil text is filled with numbers with or without punctuation inside parantheses or square brackets; for example, (1), (13-15), etc. We guessed that these might correspond to the index of English lines translated. However, we did not find them helpful in segregation. From the point of view of comfort of coding, working with full stops and new line characters was easier. All these specific substrings were removed using regex line substitutions as these appeared in between lines and not towards the end.
 
@@ -54,9 +54,9 @@ The English texts are all reasonably comfortable to work with when split by the 
 
 All English files except the 26th file begin with two lines: 
 
-SECTION x <br />
-(Astika Parva continued) <br />
-where x is the roman numeral for the file number. <br />
+_SECTION x_ <br />
+_(Astika Parva continued)_ <br />
+where _x_ is the roman numeral for the file number. <br />
 
 These two lines are just lines that help the reader navigate the book at ease. However, these lines do not feature in the Tamil texts. Hence, these lines have to be removed while cleaning. To do so, we exploited the fact that lines are separated by new-line characters. Upon splitting the text by new-line character, we can remove the first two redundant lines.
  
@@ -72,7 +72,7 @@ There were numerous stray quotes (both single and double) which were manually re
 In few English files, the abbreviation ‘i.e.’ occurs. While splitting by the period character, even ‘i.e.’ splits into two strings, which is meaningless. We replaced this with the expansion of the substring, i.e., ‘that is’.
 ## Step 5: Coding the Cleaning Functions ##
 The function used to clean Tamil data follows the following strategy, elucidated using comments:
-```
+```python
 def tamil_clean(text):
  # Importing the regex library
  import re
@@ -107,7 +107,7 @@ def tamil_clean(text):
  ```
 
 The function used to clean Tamil data follows the following strategy, elucidated using comments:
-```
+```python
 def english_clean(text):
  # Importing the regex library
  import re
@@ -161,7 +161,7 @@ def english_clean(text):
  ```
 ## Step 6: Cleaning Data and Making Files ##
 Once the cleaning functions were coded, we used the following lines of code to create a new file in a drive folder and write the contents of the cleaned string list line by line into the file. The below code was implemented for the 28th sections (English and Tamil). The same can be used in a for loop to iterate through all the data at once.
-```
+```python
 e = open("/content/drive/MyDrive/PSG/Semester 3/Venmurasu/28eng.txt", "w")
 for element in engfinal:
    e.write(element)
