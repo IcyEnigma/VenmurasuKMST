@@ -19,6 +19,9 @@ The platform we used to code our process was Google colab. The following chronol
 6. Cleaning the files and storing them line-wise in separate .txt files.
 7. Visualising the lengths of the prefinal files to assess manual alignment scope
 8. Carrying out minor alignment operations to match the few lines in each file that do not exactly translate into each other.
+9. Running the given models using our data
+10. Computing BLEU scores for the models
+11. Deploy the web application with the obtained results
 
 ## Step 1-3: Data Loading ##
 To clone the GitHub repository, a simple line of code is sufficient:
@@ -194,8 +197,7 @@ In order to better understand the difference in text lengths between the corresp
 The files cleaned using the functions given above were manually aligned to match many-to-one and one-to-many text maps. Text alignment in the file was also taken care of. Lines were combined when the split did not seem meaningful. When lines were too large, they were split to make input line size smaller. There is definitely scope to perform alignment this using code, however, the manual route was chosen in order to create scope for our discretion in cleaning.
 
 !["Plot 2"](https://user-images.githubusercontent.com/89002098/130358123-0ce01785-1eb2-4d20-aa09-141af5fca455.jpeg)
-  
-  Now that the data is perfectly aligned, it can be used as input for the models.
+Now that the data is perfectly aligned, it can be used as input for the models.
 
 ## Step 9: Running the Models on the Cleaned Data ##
 The following lines of code were used to load the AI4Bharat Model.
@@ -287,7 +289,7 @@ print(ts.google(wyw_text)) # default: from_language='auto', to_language='en'
 ```
 
 
-# BLEU Scores
+## Step 10: Computing the BLEU Scores
 | File Number   | AI4Bharat Score | Google API Score  |
 | :-----------: |:---------------:| :----------------:|
 |   22   | 12.5520949323 | 4.3291404094 |
@@ -305,7 +307,7 @@ print(ts.google(wyw_text)) # default: from_language='auto', to_language='en'
 AI4Bharat : 8.953513834979999 <br />
 Google API: 5.9600532138 <br />
 
-# Deployment
+## Step 11: Deployment
 Using Streamlit, we built a web application to view our results. The application is hosted using git and Heroku CLI.
 ### Link for Web Application 
 https://streamlitvpfinal.herokuapp.com/
