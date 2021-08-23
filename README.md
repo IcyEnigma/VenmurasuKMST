@@ -29,6 +29,7 @@ The platform we used to code our process was Google colab. The following chronol
 9. Running the given models using our data
 10. Computing BLEU scores for the models
 11. Deploy the web application with the obtained results
+12. Setting up code to combine all the data into one dataframe using the Pandas library
 
 ## Step 1-3: Data Loading ##
 To clone the GitHub repository, a simple line of code is sufficient:
@@ -319,3 +320,27 @@ Google API: 5.9600532138 <br />
 Using Streamlit, we built a web application to view our results. The application is hosted using git and Heroku CLI.
 ### Link for Web Application 
 https://streamlitvpfinal.herokuapp.com/
+
+## Step 12: Making a Pandas Dataframe
+Using the following code, we made a Pandas dataframe of all the files put together.
+```python
+import os # Importing the os library
+file_dir = "/content/drive/MyDrive/PSG/Semester 3/Venmurasu Final" # Getting the working directory
+file_list = os.listdir(file_dir) # Getting a list of files
+file_list.sort() # Sorting the files in ascending order
+x = file_list[:20] # Ignoring the other folders in the folder
+data = {} # Empty dictionary
+for file1 in x:
+  key1 = file1[2:5] # Getting the language of the file
+  if key1 not in list(data.keys()): # For key occurring first time
+    current_file = load_file("/content/drive/MyDrive/PSG/Semester 3/Venmurasu Final/" + file1)
+    data[key1] = [x for x in current_file.split("\n\n")] # List of lines in the language
+  # Code if key already exists
+  current_file = load_file("/content/drive/MyDrive/PSG/Semester 3/Venmurasu Final/" + file1)
+  text = current_file.split("\n\n")
+  for line in text:
+    data[key1].append(line) # Keep appending lines of the same language in one list
+import pandas as pd # Get the Pandas library
+df = pd.DataFrame(data) # Make the dataframe
+```
+And we're done!
