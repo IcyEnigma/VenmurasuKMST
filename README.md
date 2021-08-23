@@ -190,7 +190,7 @@ In order to better understand the difference in text lengths between the corresp
 ## Step 8: Manual Text Alignment ##
 The files cleaned using the functions given above were manually aligned to match many-to-one and one-to-many text maps. Text alignment in the file was also taken care of. Lines were combined when the split did not seem meaningful. When lines were too large, they were split to make input line size smaller. There is definitely scope to perform alignment this using code, however, the manual route was chosen in order to create scope for our discretion in cleaning.
 
-## Step 9: Running the Model on the Cleaned Data ##
+## Step 9: Running the Models on the Cleaned Data ##
 The following lines of code were used to load the AI4Bharat Model.
 ```python
 # clone the repo for running evaluation
@@ -269,6 +269,17 @@ while index<=31:
   nf.close()
   index+=1
 ```
+The following code shows the translation of one line using the Google API. It can be extended to an entire folder full of files just as done before with AI4Bharat.
+```python
+pip install translators --upgrade
+#Google API translation
+import translators as ts
+wyw_text = 'மற்றொருபுறம், அவள் கருணை தங்களுக்குக் கிடைக்குமானால், தங்களைச் சாபத்திலிருந்து விடுவிப்பாள் என்ற எண்ணத்தில், "நாம் நிச்சயமாகக் குதிரையின் வாலைக் கருப்பாக்குவோம்" என்றனர்'
+# input languages
+print(ts.google(wyw_text)) # default: from_language='auto', to_language='en'
+```
+
+
 # BLEU Scores
 | File Number   | AI4Bharat Score | Google API Score  |
 | :-----------: |:---------------:| :----------------:|
