@@ -1,4 +1,4 @@
-# Documentation #
+# Introduction #
 The Venmurasu Programming contest aims at creating a dataset of Tamil lines mapped to their English translations. The data provided in the contest was very raw and contained a lot of useful embedded cues which helped us map the Tamil and English texts. Although it was advised to drop one-to-many and many-to-one maps of the data, we deemed it essential to retain as much data as possible, and hence performed manual sentence alignment on the data. Our strategy is elucidated in upcoming sections.
 
 # Steps we Followed #
