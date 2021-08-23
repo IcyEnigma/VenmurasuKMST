@@ -1,7 +1,9 @@
 # Introduction #
-The Venmurasu Programming contest aims at creating a dataset of Tamil lines mapped to their English translations. The data provided in the contest was very raw and contained a lot of useful embedded cues which helped us map the Tamil and English texts. Although it was advised to drop one-to-many and many-to-one maps of the data, we deemed it essential to retain as much data as possible, and hence performed manual sentence alignment on the data and finally we used Streamlit Library to combine all our results into a Web Application.
+The Venmurasu Programming contest aims at creating a dataset of Tamil lines mapped to their English translations. The data provided in the contest was very raw and contained a lot of useful embedded cues which helped us map the Tamil and English texts. Although it was advised to drop one-to-many and many-to-one maps of the data, we deemed it essential to retain as much data as possible, and hence performed manual sentence alignment on the data. 
+Finally we used Python's Streamlit Library to combine all our results into a Web Application.
 
-### Link for Web Application : (https://streamlitvpfinal.herokuapp.com/)
+### Link for Web Application 
+https://streamlitvpfinal.herokuapp.com/
 
 Our strategy is elucidated in upcoming sections.
 
@@ -189,7 +191,84 @@ In order to better understand the difference in text lengths between the corresp
 The files cleaned using the functions given above were manually aligned to match many-to-one and one-to-many text maps. Text alignment in the file was also taken care of. Lines were combined when the split did not seem meaningful. When lines were too large, they were split to make input line size smaller. There is definitely scope to perform alignment this using code, however, the manual route was chosen in order to create scope for our discretion in cleaning.
 
 ## Step 9: Running the Model on the Cleaned Data ##
+The following lines of code were used to load the AI4Bharat Model.
+```python
+# clone the repo for running evaluation
+!git clone https://github.com/AI4Bharat/indicTrans.git
+%cd indicTrans
+# clone requirements repositories
+!git clone https://github.com/anoopkunchukuttan/indic_nlp_library.git
+!git clone https://github.com/anoopkunchukuttan/indic_nlp_resources.git
+!git clone https://github.com/rsennrich/subword-nmt.git
+%cd ..
+```
+```python
+# Install the necessary libraries
+!pip install sacremoses pandas mock sacrebleu tensorboardX pyarrow indic-nlp-library
+! pip install mosestokenizer subword-nmt
+# Install fairseq from source
+!git clone https://github.com/pytorch/fairseq.git
+%cd fairseq
+# !git checkout da9eaba12d82b9bfc1442f0e2c6fc1b895f4d35d
+!pip install --editable ./
 
+%cd ..
+```
+```python
+# this step is only required if you are running the code on colab
+# restart the runtime after running prev cell (to update). See this -> https://stackoverflow.com/questions/57838013/modulenotfounderror-after-successful-pip-install-in-google-colaboratory
+
+# this import will not work without restarting runtime
+from fairseq import checkpoint_utils, distributed_utils, options, tasks, utils
+```
+```python
+# download the indictrans model
+
+
+# downloading the indic-en model
+!wget https://storage.googleapis.com/samanantar-public/V0.2/models/indic-en.zip
+!unzip indic-en.zip
+
+# downloading the en-indic model
+# !wget https://storage.googleapis.com/samanantar-public/V0.2/models/en-indic.zip
+# !unzip en-indic.zip
+
+# # downloading the indic-indic model
+# !wget https://storage.googleapis.com/samanantar-public/V0.3/models/m2m.zip
+# !unzip m2m.zip
+
+%cd indicTrans
+```
+Following this, Google Drive was mounted onto the Colab notebook. The files in the relevant directory were loaded and the model was run.
+```python
+# Mounting Google Drive
+from google.colab import drive
+drive.mount('/content/drive')
+```
+```python
+# Importing model
+from indicTrans.inference.engine import Model
+
+indic2en_model = Model(expdir='../indic-en')
+```
+The following code creates new files in your destination folder. In each file, the translated line is written and the lines are separated by new-line characters.
+```python
+index = 28
+while index<=31:
+  f = open(f"/content/drive/MyDrive/Venmurasu Final/{index}tam_final.txt","r")
+  lines = f.readlines()
+  f.close()
+  l = [x[:-1] for x in lines if x!='\n']
+  englist = []
+  nf = open(f"/content/drive/MyDrive/Venmurasu Final/TranslatedText/{index}translated.txt","w")
+  for i in range(len(l)):
+    if(l[i]!=" "):
+      englist.append(indic2en_model.translate_paragraph(l[i], 'ta', 'en'))
+  for i in englist:
+    nf.write(i+"\n")
+  nf.close()
+  index+=1
+```
 # BLEU Scores
 | File Number   | AI4Bharat Score | Google API Score  |
 | :-----------: |:---------------:| :----------------:|
