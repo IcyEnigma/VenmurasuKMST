@@ -46,18 +46,18 @@ In this way, we can obtain strings of all the data files. While working on this 
 The next step is to analyse the data. Upon perusing the given files, we found some common features among English and Tamil files.
 
 ### Features Common to Tamil files ###
-Tamil files have certain phrases within curly braces which serve as supplementary information for the reader. While this is essential, we cannot have them in the dataset as the English translations of these bits are not included in the English files.
+- Tamil files have certain phrases within curly braces which serve as supplementary information for the reader. While this is essential, we cannot have them in the dataset as the English translations of these bits are not included in the English files.
 
-Tamil files have some segregation faults. For example, the 28th file begins with the words “_வினதையிடம் விடைபெற்று சென்ற கருடன்_”. These might be words from the conclusion of the previous section, which was omitted for some reason from the data before sharing it with the contestants. Such minor phrases have been removed manually.
+- Tamil files have some segregation faults. For example, the 28th file begins with the words “_வினதையிடம் விடைபெற்று சென்ற கருடன்_”. These might be words from the conclusion of the previous section, which was omitted for some reason from the data before sharing it with the contestants. Such minor phrases have been removed manually.
 
-The Tamil text is filled with numbers with or without punctuation inside parantheses or square brackets; for example, (1), (13-15), etc. We guessed that these might correspond to the index of English lines translated. However, we did not find them helpful in segregation. From the point of view of comfort of coding, working with full stops and new line characters was easier. All these specific substrings were removed using regex line substitutions as these appeared in between lines and not towards the end.
+- The Tamil text is filled with numbers with or without punctuation inside parantheses or square brackets; for example, (1), (13-15), etc. We guessed that these might correspond to the index of English lines translated. However, we did not find them helpful in segregation. From the point of view of comfort of coding, working with full stops and new line characters was easier. All these specific substrings were removed using regex line substitutions as these appeared in between lines and not towards the end.
 
-There were numerous instances where a single line in Tamil extrapolates to multiple lines in the given English translation. Such things cannot be taken into account by a cleaning function, and hence such operations were performed manually.
+- There were numerous instances where a single line in Tamil extrapolates to multiple lines in the given English translation. Such things cannot be taken into account by a cleaning function, and hence such operations were performed manually.
 
 ### Features Common to English files ###
-The English texts are all reasonably comfortable to work with when split by the new-line character.
+- The English texts are all reasonably comfortable to work with when split by the new-line character.
 
-All English files except the 26th file begin with two lines: 
+- All English files except the 26th file begin with two lines: 
 
 _SECTION x_ <br />
 _(Astika Parva continued)_ <br />
@@ -65,16 +65,17 @@ where _x_ is the roman numeral for the file number. <br />
 
 These two lines are just lines that help the reader navigate the book at ease. However, these lines do not feature in the Tamil texts. Hence, these lines have to be removed while cleaning. To do so, we exploited the fact that lines are separated by new-line characters. Upon splitting the text by new-line character, we can remove the first two redundant lines.
  
-All English files end with the following line except the 25th file:
+- All English files end with the following line except the 25th file:
 “So ends the xth section in the Astika Parva of the Adi Parva” (where x denotes the file number).
 This line, similar to those in point 2 given above, also does not feature in corresponding Tamil files. Hence, we removed these as well.
 For the 25th file, there is an additional “Footnotes” string that is redundant. Our cleaning function takes care of removing all the above four kinds of redundant lines.
 
-The page number of the texts (as they appear in the book) appear intermittently throughout the text in the format “p.x”, where x denotes the page number. The page numbers were all separated by new-line characters and hence a simple loop would take care of eliminating them.
+- The page number of the texts (as they appear in the book) appear intermittently throughout the text in the format “p.x”, where x denotes the page number. The page numbers were all separated by new-line characters and hence a simple loop would take care of eliminating them.
 
-There were numerous stray quotes (both single and double) which were manually removed to enhance the quality of the cleaned data.	
+- There were numerous stray quotes (both single and double) which were manually removed to enhance the quality of the cleaned data.	
 
-In few English files, the abbreviation ‘i.e.’ occurs. While splitting by the period character, even ‘i.e.’ splits into two strings, which is meaningless. We replaced this with the expansion of the substring, i.e., ‘that is’.
+- In few English files, the abbreviation ‘i.e.’ occurs. While splitting by the period character, even ‘i.e.’ splits into two strings, which is meaningless. We replaced this with the expansion of the substring, i.e., ‘that is’.
+
 ## Step 5: Coding the Cleaning Functions ##
 The function used to clean Tamil data follows the following strategy, elucidated using comments:
 ```python
