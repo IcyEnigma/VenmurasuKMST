@@ -13,7 +13,6 @@ The platform we used to code our process was Google colab. The following chronol
 6. Cleaning the files and storing them line-wise in separate .txt files.
 7. Visualising the lengths of the prefinal files to assess manual alignment scope
 8. Carrying out minor alignment operations to match the few lines in each file that do not exactly translate into each other.
-9. Importing clean file pairs as Pandas dataframes to run it on different models.
 
 ## Step 1-3: Data Loading ##
 To clone the GitHub repository, a simple line of code is sufficient:
@@ -202,3 +201,5 @@ The files cleaned using the functions given above were manually aligned to match
 ### Average Scores ###
 AI4Bharat : 8.953513834979999 <br />
 Google API: 5.9600532138 <br />
+
+# Deployment
