@@ -178,13 +178,13 @@ def english_clean(text):
 ## Step 6: Cleaning Data and Making Files ##
 Once the cleaning functions were coded, we used the following lines of code to create a new file in a drive folder and write the contents of the cleaned string list line by line into the file. The below code was implemented for the 28th sections (English and Tamil). The same can be used in a for loop to iterate through all the data at once.
 ```python
-e = open("/content/drive/MyDrive/PSG/Semester 3/Venmurasu/28eng.txt", "w")
+e = open("/content/drive/MyDrive/PSG/Semester 3/Venmurasu/28eng_final.txt", "w")
 for element in engfinal:
    e.write(element)
    e.write("\n")
    e.write("\n")
 e.close()
-t = open("/content/drive/MyDrive/PSG/Semester 3/Venmurasu/28tam.txt", "w")
+t = open("/content/drive/MyDrive/PSG/Semester 3/Venmurasu/28tam_final.txt", "w")
 for element in tamfinal:
    t.write(element)
    t.write("\n")
