@@ -118,7 +118,7 @@ def tamil_clean(text):
  return sentences 
  ```
 
-The function used to clean Tamil data follows the following strategy, elucidated using comments:
+The function used to clean English data follows the following strategy, elucidated using comments:
 ```python
 def english_clean(text):
  # Importing the regex library
