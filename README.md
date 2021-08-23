@@ -184,7 +184,7 @@ t.close()
 ## Step 7: Analysis of Texts through Plots ##
 In order to better understand the difference in text lengths between the corresponding files, we used the Matplotlib library to visualize our data.
 
-!["Plot 1"](https://user-images.githubusercontent.com/89002098/130358123-0ce01785-1eb2-4d20-aa09-141af5fca455.jpeg)
+!["Plot 1"](https://user-images.githubusercontent.com/89002098/130358092-b3b9222f-2e66-42c7-8a95-e75a292da709.jpeg)
 
 !["Plot 2"](https://user-images.githubusercontent.com/89002098/130358123-0ce01785-1eb2-4d20-aa09-141af5fca455.jpeg)
 
