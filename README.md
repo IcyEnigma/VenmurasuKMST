@@ -181,9 +181,14 @@ for element in tamfinal:
 t.close()
 ```
 ## Step 7: Analysis of Texts through Plots ##
-In order to better understand the difference in text lengths between the corresponding files, we used the Matplotlib library.
+In order to better understand the difference in text lengths between the corresponding files, we used the Matplotlib library to visualize our data.
 
 !["Plot 1"](https://user-images.githubusercontent.com/89002098/130358123-0ce01785-1eb2-4d20-aa09-141af5fca455.jpeg)
+
+* From the plot, it is pretty evident that the text length of corresponding English and Tamil files are not equal.
+* In most of the cases,Tamil files have more length as compared to the corresponding English files.This is because of the extra full stops present in the Tamil files.
+* Hence,We decided to manually align the Text files where the full stops do not match. 
+
 
 !["Plot 2"](https://user-images.githubusercontent.com/89002098/130358123-0ce01785-1eb2-4d20-aa09-141af5fca455.jpeg)
 
