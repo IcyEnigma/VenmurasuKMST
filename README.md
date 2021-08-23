@@ -192,6 +192,10 @@ In order to better understand the difference in text lengths between the corresp
 
 !["Plot 2"](https://user-images.githubusercontent.com/89002098/130358123-0ce01785-1eb2-4d20-aa09-141af5fca455.jpeg)
 
+- From the plot, it is pretty evident that the text length of corresponding English and Tamil files are not equal.
+- In most of the cases, Tamil files have more length as compared to the corresponding English files. This is because of the extra full stops present in the Tamil files.
+- Hence, we decided to manually align the text files where the full stops do not match. 
+
 ## Step 8: Manual Text Alignment ##
 The files cleaned using the functions given above were manually aligned to match many-to-one and one-to-many text maps. Text alignment in the file was also taken care of. Lines were combined when the split did not seem meaningful. When lines were too large, they were split to make input line size smaller. There is definitely scope to perform alignment this using code, however, the manual route was chosen in order to create scope for our discretion in cleaning.
 
