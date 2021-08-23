@@ -1,7 +1,5 @@
 # Introduction #
 
-### Team Members
-
 The Venmurasu Programming contest aims at creating a dataset of Tamil lines mapped to their English translations. The data provided in the contest was very raw and contained a lot of useful embedded cues which helped us map the Tamil and English texts. Although it was advised to drop one-to-many and many-to-one maps of the data, we deemed it essential to retain as much data as possible, and hence performed manual sentence alignment on the data. 
 Finally we used Python's Streamlit Library to combine all our results into a Web Application.
 
@@ -9,6 +7,12 @@ Finally we used Python's Streamlit Library to combine all our results into a Web
 https://streamlitvpfinal.herokuapp.com/
 
 Our strategy is elucidated in upcoming sections.
+
+# Team Members
+- Kavin Aravindhan R (20Z325)
+- Manuvikash S (20Z329)
+- Sharan S S (20Z341)
+- Tharunkumar Dhanasekaran (20Z352)
 
 # Steps we Followed #
 
