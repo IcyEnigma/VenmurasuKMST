@@ -203,3 +203,4 @@ AI4Bharat : 8.953513834979999 <br />
 Google API: 5.9600532138 <br />
 
 # Deployment
+Using Streamlit, we built a web application to view our results. The application is hosted using Heroku.
