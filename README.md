@@ -188,6 +188,8 @@ In order to better understand the difference in text lengths between the corresp
 ## Step 8: Manual Text Alignment ##
 The files cleaned using the functions given above were manually aligned to match many-to-one and one-to-many text maps. Text alignment in the file was also taken care of. Lines were combined when the split did not seem meaningful. When lines were too large, they were split to make input line size smaller. There is definitely scope to perform alignment this using code, however, the manual route was chosen in order to create scope for our discretion in cleaning.
 
+## Step 9: Running the Model on the Cleaned Data ##
+
 # BLEU Scores
 | File Number   | AI4Bharat Score | Google API Score  |
 | :-----------: |:---------------:| :----------------:|
