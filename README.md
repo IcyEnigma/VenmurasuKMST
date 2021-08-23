@@ -194,7 +194,8 @@ In order to better understand the difference in text lengths between the corresp
 The files cleaned using the functions given above were manually aligned to match many-to-one and one-to-many text maps. Text alignment in the file was also taken care of. Lines were combined when the split did not seem meaningful. When lines were too large, they were split to make input line size smaller. There is definitely scope to perform alignment this using code, however, the manual route was chosen in order to create scope for our discretion in cleaning.
 
 !["Plot 2"](https://user-images.githubusercontent.com/89002098/130358123-0ce01785-1eb2-4d20-aa09-141af5fca455.jpeg)
-Now that the data is perfectly aligned, it can be used as input for the models.
+  
+  Now that the data is perfectly aligned, it can be used as input for the models.
 
 ## Step 9: Running the Models on the Cleaned Data ##
 The following lines of code were used to load the AI4Bharat Model.
