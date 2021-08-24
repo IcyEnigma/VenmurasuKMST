@@ -1,3 +1,4 @@
+
 import sacrebleu
 from sacremoses import MosesDetokenizer
 md = MosesDetokenizer(lang='en')
@@ -19,14 +20,14 @@ while (index<=31):
   # Open the translation file by the NMT model and detokenize the predictions
   preds = []
 
-  with open(f"/content/drive/MyDrive/Venmurasu Final/GoogleEval/{index}translated.txt") as pred:  
+  with open(f"/content/drive/MyDrive/Venmurasu Final/TranslatedText/{index}translated.txt") as pred:  
       for line in pred: 
           line = line.strip().split() 
           line = md.detokenize(line) 
           preds.append(line)
 
   # Calculate BLEU for sentence by sentence and save the result to a file
-  with open(f"/content/drive/MyDrive/Venmurasu Final/Google scores/{index}-GScore.txt", "w+") as output:
+  with open(f"/content/drive/MyDrive/Venmurasu Final/Evaluation/{index}-Score.txt", "w+") as output:
       scorelist = []
       for line in zip(refs,preds):
           test = line[0]
