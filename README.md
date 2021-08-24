@@ -29,7 +29,7 @@ The platform we used to code our process was Google colab. The following chronol
 8. Carrying out minor alignment operations to match the few lines in each file that do not exactly translate into each other.
 9. Running the given models using our data
 10. Computing BLEU scores for the models
-11. Deploy the web application with the obtained results
+11. Deploying the web application with the obtained results
 12. Setting up code to combine all the data into one dataframe using the Pandas library
 
 ## Step 1-3: Data Loading ##
