@@ -9,10 +9,11 @@ https://streamlitvpfinal.herokuapp.com/
 Our strategy is elucidated in upcoming sections.
 
 # Team Members
+- Tharunkumar Dhanasekaran (20Z352)
 - Kavin Aravindhan R (20Z325)
 - Manuvikash S (20Z329)
 - Sharan S S (20Z341)
-- Tharunkumar Dhanasekaran (20Z352)
+
 
 # Steps we Followed #
 
