@@ -8,6 +8,12 @@ https://streamlitvpfinal.herokuapp.com/
 
 Our strategy is elucidated in upcoming sections.
 
+### Contents of our Repository
+Folders: </ br>
+1. Data: Final, cleaned files for each section (22-31), source code file, final csv file of combined dataset
+2. Translations: Original English texts and translated English files (for AI4Bharat)
+3. 
+
 # Team Members
 - Tharunkumar Dhanasekaran (20Z352)
 - Kavin Aravindhan R (20Z325)
@@ -345,5 +351,5 @@ import pandas as pd # Get the Pandas library
 df = pd.DataFrame(data) # Make the dataframe
 df.to_csv("dataset_final.csv", index=None)
 ```
-And we're done!
+And we're done! </ br>
 The final dataset is available as csv file in the Data folder of this repository.
