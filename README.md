@@ -343,5 +343,7 @@ for file1 in x:
     data[key1].append(line) # Keep appending lines of the same language in one list
 import pandas as pd # Get the Pandas library
 df = pd.DataFrame(data) # Make the dataframe
+df.to_csv("dataset_final.csv", index=None)
 ```
 And we're done!
+The final dataset is available as csv file in the Data folder of this repository.
