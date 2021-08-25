@@ -12,9 +12,10 @@ Our strategy is elucidated in upcoming sections.
 Folders: <br />
 1. Data: Final cleaned files for each section (22-31), source code files, final csv file of combined dataset
 2. Evaluation: Files with line-wise scores of the AI4Bharat Model, evaluation script
-3. Google API: Has 2 folders - Evaluations and Translations (for the Google API), aggregate scores file
-4. Streamlit files
-5. Translations: AIFBharat translations of the Tamil sections
+3. Translations: AI4Bharat translations of the Tamil sections
+4. Google API: Has 2 folders - Evaluations and Translations (for the Google API), aggregate scores file
+5. Streamlit files
+
 
 # Team Members
 - Tharunkumar Dhanasekaran (20Z352)
