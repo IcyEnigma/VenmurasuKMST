@@ -10,9 +10,11 @@ Our strategy is elucidated in upcoming sections.
 
 ### Contents of our Repository
 Folders: <br />
-1. Data: Final, cleaned files for each section (22-31), source code file, final csv file of combined dataset
-2. Translations: Original English texts and translated English files (for AI4Bharat)
-3. 
+1. Data: Final cleaned files for each section (22-31), source code files, final csv file of combined dataset
+2. Evaluation: Files with line-wise scores of the AI4Bharat Model, evaluation script
+3. Google API: Has 2 folders - Evaluations and Translations (for the Google API), aggregate scores file
+4. Streamlit files
+5. Translations: AIFBharat translations of the Tamil sections
 
 # Team Members
 - Tharunkumar Dhanasekaran (20Z352)
