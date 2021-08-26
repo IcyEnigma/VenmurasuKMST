@@ -281,7 +281,7 @@ indic2en_model = Model(expdir='../indic-en')
 ```
 The following code creates new files in your destination folder. In each file, the translated line is written and the lines are separated by new-line characters.
 ```python
-index = 28
+index = 22
 while index<=31:
   f = open(f"/content/drive/MyDrive/Venmurasu Final/{index}tam_final.txt","r")
   lines = f.readlines()
